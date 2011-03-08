@@ -6,23 +6,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 #export DYLD_FALLBACK_LIBRARY_PATH=/opt/local/lib
  
-# Terminal colours (after installing GNU coreutils)
-NM="\[\033[0;38m\]" #means no background and white lines
-HI="\[\033[0;37m\]" #change this for letter colors
-HII="\[\033[0;31m\]" #change this for letter colors
-SI="\[\033[0;33m\]" #this is for the current directory
-IN="\[\033[0m\]"
- 
-#export PS1="$NM[$SI\w$NM] $IN"
- 
-if [ "$TERM" != "dumb" ]; then
-    export LS_OPTIONS='--color=auto'
-    eval `dircolors ~/.dir_colors`
-fi
-
-# Custom colorized prompt
-export PS1='\e]2;\u@\h\a\[\e[1;m\]\t\[\e[0m\] [\[\e[32m\]\u\[\e[0m\]\[\e[33m\]@\h\[\e[0m\]] [\[\e[36m\]\w\[\e[0m\]]\n\[\e[35m\]>\[\e[0m\] '
-export SUDO_PS1='\[\h:\w\] \u\$ '
+# Customized prompt
+source .prompt
  
 # Useful aliases
 alias ls='ls $LS_OPTIONS -F'
