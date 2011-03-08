@@ -1,14 +1,14 @@
 # Terminal colors
-WHITE="\[\e[0m\]"
-GREEN="\[\e[32m\]"
-RED="\[\e[31m\]"
-CYAN="\[\e[36m\]"
-MAGENTA="\[\e[35m\]"
+WH="\[\e[0m\]"
+GR="\[\e[32m\]"
+RE="\[\e[31m\]"
+CY="\[\e[36m\]"
+MA="\[\e[35m\]"
 
 if [ "$TERM" != "dumb" ]; then
     export LS_OPTIONS='--color=auto'
     eval `dircolors ~/.dir_colors`
 fi
 
-export PS1="\t$WHITE [$GREEN\u$WHITE@$RED\H$WHITE] [$CYAN\w$WHITE]\n$MAGENTA>$WHITE "
+export PS1="\t$WH [$GR\u$WH@$RE\H$WH] [$CY\w$WH]\n$MA>$WH "
 export SUDO_PS1='\[\h:\w\] \u\$ '
